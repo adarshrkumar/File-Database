@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>File Not Found</title>
+  </head>
+  <body>
+    <script>
+      let lPath = location.pathname
+      let uWord = ''
+      if (lPath.startsWith('/uploads/')) {
+        lPath = lPath.replace('/uploads', '')
+        uWord = 'Uploaded '
+      }
+      let fWord = 'File'
+      if (lPath.endsWith('/')) {
+        uWord = 'Upload '
+        fWord = 'Directory'
+        document.title = document.title.replace('File', 'Folder')
+      }
+      else if (lPath.includes('.') === false) {
+        lPath = `${lPath}.html`
+      }
+document.body.innerHTML = `<pre>Error: ENOENT: The ${uWord}${fWord} "${lPath}" was not found.</pre>`
+    </script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "uname": "Admin", 
+  "passw": "Admin", 
+  "authorized_urls": [
+    "https://file-database.rockgamerak.repl.co"
+  ]
+}
